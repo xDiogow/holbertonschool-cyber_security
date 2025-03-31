@@ -1,2 +1,2 @@
 #!/bin/bash
-source /etc/os-release && echo $ID
+sed -n 's/^ID=//p' /etc/os-release
