@@ -1,2 +1,2 @@
 #!/bin/bash
-sed -n 's/^ID=//p' /etc/os-release
+lsb_release -i | cut -f2
