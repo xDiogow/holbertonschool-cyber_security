@@ -1,2 +1,3 @@
 #!/bin/bash
-[ $(sha256sum "$1" | awk '{print $1}') == "$2" ] && echo "$1: OK"
+sha256sum $1 > $1.sha256
+sha256sum -c $1.sha256
