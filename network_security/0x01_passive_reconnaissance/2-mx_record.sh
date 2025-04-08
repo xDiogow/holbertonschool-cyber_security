@@ -1,2 +1,2 @@
 #!/bin/bash
-nslookup set q=mx $1
+nslookup set -q=mx $1
