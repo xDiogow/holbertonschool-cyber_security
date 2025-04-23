@@ -1,1 +1,1 @@
-dp and udp.dstport >= 33434
+dp and udp.dstport == 33434
