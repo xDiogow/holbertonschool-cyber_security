@@ -5,10 +5,9 @@ if [ -z "$1" ]; then
   exit 1
 fi
 
-encoded=$(echo "$1" | sed 's/{xor}//')
-
-decoded=$(echo "$encoded" | base64 -d 2>/dev/null)
-
+# strip the marker and decode
+encoded=${1#\{xor\}}
+decoded=$(echo -n "$encoded" | base64 -d 2>/dev/null)
 if [ $? -ne 0 ]; then
   echo "Error: Invalid Base64 input."
   exit 1
@@ -16,11 +15,6 @@ fi
 
 key=95
 
-decoded_message=""
-for (( i=0; i<${#decoded}; i++ )); do
-    char=$(printf "%d" "'${decoded:$i:1}")
-    xor_char=$(($char ^ $key))
-    decoded_message+=$(printf \\$(printf '%03o' "$xor_char"))
-done
-
-echo "$decoded_message"
+# convert to hex, XOR each byte in hex-space, then back to binary
+hex=$(printf "%s" "$decoded" | xxd -p)
+xor_hex=$(printf "%s\n" 
