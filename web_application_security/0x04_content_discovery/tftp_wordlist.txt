@@ -1,0 +1,17 @@
+pxelinux.0
+boot.cfg
+default.cfg
+startup-config
+config.txt
+flag.txt
+backup.tar
+tftpboot.cfg
+firmware.img
+system.conf
+network.conf
+passwd
+shadow
+initrd.img
+vmlinuz
+EOF
+
