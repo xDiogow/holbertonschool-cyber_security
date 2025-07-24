@@ -36,8 +36,6 @@ def find_heap(pid):
             start_str, end_str = parts[0].split('-')
             start = int(start_str, 16)
             end = int(end_str, 16)
-
-            #print(f'[*] Found heap at {hex(start)} - {hex(end)}')
             return start, end
 
     print('[!] Heap not found')
@@ -96,10 +94,8 @@ def main():
         sys.exit(1)
 
     search_addr = start + index
-    #print(f"[+] Found '{sys.argv[2]}' at {hex(search_addr)}")
 
     write_heap(pid, search_addr, replace)
-
 
 if __name__ == "__main__":
     main()
