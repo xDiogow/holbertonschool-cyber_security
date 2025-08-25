@@ -1,8 +1,12 @@
-#1-hello_world_class.rb
+#!/usr/bin/env ruby
 
+# Class HelloWorld with instance variable and display method
 class HelloWorld
-  MESSAGE = "Hello World!"
-  def print_hello()
-    puts MESSAGE
-  end
+    def initialize
+      @message = "Hello, World!"
+    end
+
+    def print_hello
+      puts @message
+    end
 end

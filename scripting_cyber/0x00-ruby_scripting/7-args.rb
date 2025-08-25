@@ -1,10 +1,13 @@
-def print_arguments
-  if ARGV.empty?
-    puts "No arguments provided."
-    return
-  end
+#!/usr/bin/env ruby
 
-  ARGV.each.with_index(1) do |arg, i|
-    puts "#{i}. #{arg}"
+# Function that prints each command-line argument
+def print_arguments
+    if ARGV.empty?
+      puts "No arguments provided."
+    else
+      puts "Arguments:"
+      ARGV.each_with_index do |arg, index|
+        puts "#{index + 1}. #{arg}"
+      end
+    end
   end
-end
